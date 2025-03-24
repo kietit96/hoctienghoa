@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
-import { Home } from '@/srceens'
 import { public_link } from './router'
-import { Header } from '@comps/export'
+import Header from '@/layout/Header'
+
 const Drawer = createDrawerNavigator()
 export default function AppNavigator() {
     return (
@@ -11,7 +11,7 @@ export default function AppNavigator() {
             <Drawer.Navigator initialRouteName="Home">
                 {public_link.map((item, index) => {
                     return <Drawer.Screen key={index} name={item.name} component={item.component} options={{
-                        header: () => <Header />
+                        header: () => <Header title={item.name} />
                     }} />
                 })}
 

@@ -1,3 +1,3 @@
 export type Tchildren = {
-    children: React.ReactElement
+    children: React.PropsWithChildren<React.ReactNode> | React.ReactNode
 }
